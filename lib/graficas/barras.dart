@@ -39,7 +39,7 @@ class _BarrasState extends State<Barras> {
   Widget build(BuildContext context) {
     final _barChartData = BarChartData(
         backgroundColor: Colors.grey[600],
-        maxY: 10,
+        maxY: 7,
         gridData: FlGridData(show: true),
         axisTitleData: FlAxisTitleData(
           show: true,
@@ -50,7 +50,8 @@ class _BarrasState extends State<Barras> {
           show: true,
           bottomTitles: SideTitles(
             showTitles: true,
-            getTitles: (index) => datos[index.toInt()]["producto"],
+            getTitles: (index) =>
+                datos[index.toInt()]["producto"].toString().substring(0, 3),
           ),
         ),
         barGroups: _barSpots0);
